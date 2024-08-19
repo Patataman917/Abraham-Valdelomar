@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abraham Valdelomar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            color: #333;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            overflow-y: scroll; /* Asegura que la barra de desplazamiento esté visible */
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #004d40;
+            font-size: 3em;
+            margin: 20px 0;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px auto;
+            max-width: 800px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        /* Estilos para las tarjetas */
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 50px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+.card {
+    width: 300px;
+    height: 300px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    animation: pulse 3s infinite;
+}
+
+.card-vida {
+    background-color: #B3E5FC; /* Azul celeste claro */
+    color: #333333; /* Gris oscuro */
+    border: 2px solid #81D4FA; /* Azul celeste más intenso */
+}
+
+.card-colonida {
+    background-color: #81D4FA; /* Azul celeste más intenso */
+    color: #FFFFFF; /* Blanco */
+    border: 2px solid #4FC3F7; /* Azul celeste brillante */
+}
+
+.card-caracteristicas {
+    background-color: #4FC3F7; /* Azul celeste brillante */
+    color: #FFFFFF; /* Blanco */
+    border: 2px solid #29B6F6; /* Azul celeste vibrante */
+}
+
+/* Estilo del resplandor en hover */
+.card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+}
+
+        /* Estilo del fondo de estrellas */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            background-size: 20px 20px;
+            animation: stars 10s linear infinite;
+        }
+
+        @keyframes stars {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        /* Contenedor de la imagen y el texto */
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .image-container {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-container {
+            flex: 2;
+            text-align: left;
+            max-width: 800px;
+        }
+
+        /* Estilos de animación */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilos generales para botones de navegación */
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px auto;
+            flex-direction: column;
+        }
+
+        .navigation-buttons a {
+            display: inline-block;
+            background-color: #004d40; /* Color oscuro para los botones */
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: 2px solid #004d40; /* Borde oscuro */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .navigation-buttons a:hover {
+            background-color: #00251a; /* Color más oscuro para el hover */
+            border-color: #00251a;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Abraham Valdelomar</h1>
+    <div class="content-container">
+        <div class="image-container">
+            <img src="descarga - 2024-08-18T202029.587.jpg">
+        </div>
+        <div class="text-container">
+            <p>Abraham Valdelomar fue un escritor, poeta y cuentista peruano, un miembro influyente del Grupo Colónida, el cual promovió un nuevo movimiento literario en Perú a inicios del siglo XX. Su obra es ampliamente conocida por su lirismo y la representación vívida de la vida y las costumbres peruanas. Además de ser escritor, Valdelomar incursionó en el periodismo, el arte y la política, demostrando una versatilidad única.</p>
+            <p>Valdelomar se destacó no solo por su obra literaria, sino también por su personalidad carismática y su habilidad para conectar con la gente. A menudo utilizaba sus experiencias personales como inspiración para sus historias, creando relatos que resonaban profundamente con el público peruano. Entre sus obras más destacadas se encuentran "El caballero Carmelo" y "La ciudad muerta", las cuales reflejan su amor por las tradiciones y paisajes del Perú.</p>
+        </div>
+    </div>
+
+    <!-- Tarjetas de navegación -->
+    <div class="cards-container">
+        <a href="vida.html" class="card card-vida">
+            <h3>Vida</h3>
+            <p>Explora la vida de Abraham Valdelomar, sus inicios y su influencia en la literatura peruana.</p>
+        </a>
+        <a href="colonida.html" class="card card-colonida">
+            <h3>Colónida</h3>
+            <p>Conoce más sobre el Grupo Colónida y su impacto en la literatura y cultura peruana.</p>
+        </a>
+        <a href="caracteristicas.html" class="card card-caracteristicas">
+            <h3>Características</h3>
+            <p>Descubre las características literarias y personales que definieron a Abraham Valdelomar.</p>
+        </a>
+    </div>
+
+    <!-- Elementos decorativos -->
+    <div class="stars"></div>
+
+    <!-- Agregar más elementos interactivos y animaciones -->
+    <div class="interactive-elements">
+        <!-- Aquí puedes agregar más elementos interactivos -->
+    </div>
+</body>
+</html>

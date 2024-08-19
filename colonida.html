@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Colónida</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll; /* Asegura que la barra de desplazamiento esté visible */
+        }
+
+        h1 {
+            color: #004d40;
+            font-size: 2.5em;
+            margin: 20px 0;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px auto;
+            max-width: 800px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            max-width: 1200px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        .image-container {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-container {
+            flex: 2;
+            text-align: left;
+            max-width: 800px;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px auto;
+        }
+
+        .navigation-buttons a {
+            display: inline-block;
+            background-color: #004d40; /* Color oscuro para los botones */
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: 2px solid #004d40; /* Borde oscuro */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .navigation-buttons a:hover {
+            background-color: #00251a; /* Color más oscuro para el hover */
+            border-color: #00251a;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            background-size: 20px 20px;
+            animation: stars 10s linear infinite;
+        }
+
+        @keyframes stars {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Grupo Colónida</h1>
+    <div class="content-container">
+        <div class="image-container">
+            <img src="descarga - 2024-08-18T202029.587.jpg">
+        </div>
+        <div class="text-container">
+            <p>El Grupo Colónida fue un destacado movimiento literario peruano que surgió a principios del siglo XX. Fundado en 1909 por Abraham Valdelomar y un grupo de jóvenes escritores, el grupo se caracterizó por su enfoque en la modernización de la literatura peruana y su compromiso con la renovación estética y temática.</p>
+            <p>Los miembros del Grupo Colónida se inspiraron en corrientes literarias europeas y en la búsqueda de una identidad cultural peruana. El grupo promovió un estilo literario innovador, influenciado por el modernismo y el simbolismo, y se convirtió en una de las fuerzas más importantes en la escena literaria peruana de la época.</p>
+            <p>Además de Valdelomar, el grupo incluyó a escritores como Martín Adán, José María Eguren y otros. Su legado sigue siendo relevante en la literatura peruana, y sus obras continúan siendo estudiadas y apreciadas por su impacto en la cultura literaria del país.</p>
+        </div>
+    </div>
+
+    <div class="navigation-buttons">
+        <a href="index.html">Inicio</a>
+        <a href="vida.html">Vida</a>
+        <a href="caracteristicas.html">Características</a>
+    </div>
+
+    <div class="stars"></div>
+</body>
+</html>
