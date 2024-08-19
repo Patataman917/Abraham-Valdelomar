@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,54 +10,102 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
             color: #333;
-            text-align: center;
             margin: 0;
             padding: 0;
-            overflow-y: scroll; /* Asegura que la barra de desplazamiento esté visible */
+            overflow-y: scroll;
         }
 
         h1 {
             color: #004d40;
             font-size: 2.5em;
+            text-align: center;
             margin: 20px 0;
             animation: fadeInDown 1s ease-out;
         }
 
-        p {
-            font-size: 1.2em;
-            margin: 20px auto;
-            max-width: 800px;
-            line-height: 1.6;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.5s forwards;
-        }
-
-        .content-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 20px;
-            max-width: 1200px;
-            padding: 20px;
+        .timeline {
+            position: relative;
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            z-index: 1;
         }
 
-        .image-container {
-            flex: 1;
-            max-width: 300px;
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #004d40;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
         }
 
-        .image-container img {
+        .event {
+            position: relative;
             width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            background: #e0f7fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 1;
         }
 
-        .text-container {
-            flex: 2;
+        .event:nth-child(even) {
+            flex-direction: row;
+        }
+
+        .event:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .event-content {
+            flex: 1;
             text-align: left;
-            max-width: 800px;
+        }
+
+        .event img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-left: 20px;
+        }
+
+        .event:nth-child(even) img {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+        .event:nth-child(odd) img {
+            margin-left: 20px;
+            margin-right: 0;
+        }
+
+        .event h2 {
+            margin-top: 0;
+            color: #004d40;
+        }
+
+        .event p {
+            margin: 10px 0 0;
+            color: #333;
+        }
+
+        .event:hover {
+            background-color: #b2ebf2;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .navigation-buttons {
@@ -68,19 +117,19 @@
 
         .navigation-buttons a {
             display: inline-block;
-            background-color: #004d40; /* Color oscuro para los botones */
+            background-color: #004d40;
             color: #fff;
             padding: 15px 30px;
             border-radius: 30px;
             text-decoration: none;
             font-size: 1.2em;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            border: 2px solid #004d40; /* Borde oscuro */
+            border: 2px solid #004d40;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .navigation-buttons a:hover {
-            background-color: #00251a; /* Color más oscuro para el hover */
+            background-color: #00251a;
             border-color: #00251a;
             transform: scale(1.1);
         }
@@ -95,60 +144,79 @@
                 transform: translateY(0);
             }
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-            background-size: 20px 20px;
-            animation: stars 10s linear infinite;
-        }
-
-        @keyframes stars {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 100% 100%;
-            }
-        }
     </style>
 </head>
 <body>
     <h1>Vida de Abraham Valdelomar</h1>
-    <div class="content-container">
-        <div class="image-container">
-            <img src="descarga - 2024-08-18T202029.587.jpg">
+    <div class="timeline">
+        <div class="event">
+            <img src="imagen_nacimiento.jpg" alt="Nacimiento">
+            <div class="event-content">
+                <h2>1888 - Nacimiento</h2>
+                <p>Abraham Valdelomar nació el 27 de abril de 1888 en Ica, Perú. Desde temprana edad, mostró interés en las letras y el arte.</p>
+            </div>
         </div>
-        <div class="text-container">
-            <p>Abraham Valdelomar nació el 27 de abril de 1888 en Ica, Perú. Desde joven mostró un notable interés por las letras y la literatura, participando activamente en el movimiento literario peruano de principios del siglo XX. Su formación académica en Lima y su posterior viaje a Europa influyeron profundamente en su estilo literario.</p>
-            <p>Valdelomar fue una figura clave en el desarrollo del modernismo en la literatura peruana y un miembro destacado del Grupo Colónida. Su obra abarca una variedad de géneros, incluyendo la poesía, el cuento y el ensayo. A lo largo de su vida, se mantuvo comprometido con el desarrollo cultural y social de Perú, y su legado sigue siendo influyente en la literatura peruana contemporánea.</p>
-            <p>Falleció el 03 de noviembre de 1919, pero su impacto en la literatura y la cultura peruana perdura a través de sus escritos y el movimiento literario que ayudó a consolidar.</p>
+        <div class="event">
+            <img src="imagen_primeros_escritos.jpg" alt="Primeros Escritos">
+            <div class="event-content">
+                <h2>1908 - Primeros Escritos</h2>
+                <p>En 1908, Valdelomar publicó sus primeros trabajos literarios. Su obra comenzaba a ser reconocida en círculos literarios locales.</p>
+            </div>
         </div>
+        <div class="event">
+            <img src="imagen_el_caballero_carmelo.jpg" alt="El Caballero Carmelo">
+            <div class="event-content">
+                <h2>1918 - Publicación de "El Caballero Carmelo"</h2>
+                <p>En 1918, Valdelomar publicó "El Caballero Carmelo", una colección de cuentos que consolidó su reputación como uno de los escritores más importantes de Perú.</p>
+            </div>
+        </div>
+        <div class="event">
+            <img src="imagen_grupo_colonida.jpg" alt="Grupo Colónida">
+            <div class="event-content">
+                <h2>1916 - Fundación de la Revista Colónida</h2>
+                <p>En 1916, Valdelomar fundó la revista literaria Colónida, que buscaba renovar la literatura peruana y tuvo una gran influencia en su tiempo.</p>
+            </div>
+        </div>
+        <div class="event">
+            <img src="imagen_los_hijos_del_sol.jpg" alt="Los Hijos del Sol">
+            <div class="event-content">
+                <h2>1921 - Publicación de "Los Hijos del Sol"</h2>
+                <p>"Los Hijos del Sol" es una colección de cuentos publicada póstumamente en 1921, que muestra su habilidad para explorar temas sociales y culturales.</p>
+            </div>
+        </div>
+        <div class="event">
+            <img src="imagen_muerte.jpg" alt="Muerte">
+            <div class="event-content">
+                <h2>1919 - Muerte</h2>
+                <p>Abraham Valdelomar falleció el 3 de noviembre de 1919 en Ayacucho, Perú, a causa de un accidente que le provocó la fractura de la columna vertebral.</p>
+            </div>
+        </div>
+        <!-- Añadir más eventos aquí -->
     </div>
 
     <div class="navigation-buttons">
         <a href="index.html">Inicio</a>
-        <a href="colonida.html">Grupo Colónida</a>
         <a href="caracteristicas.html">Características</a>
+        <a href="colonida.html">Grupo Colónida</a>
     </div>
-
-    <div class="stars"></div>
+            <script>
+            document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+    
+    document.addEventListener('mousedown', function(e) {
+        if(e.button === 2) {
+            e.preventDefault();
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if(e.ctrlKey && (e.which === 67 || e.which === 86 || e.which === 85 || e.which === 117)) {
+            // Ctrl+C, Ctrl+V, Ctrl+U y Ctrl+Shift+I
+            e.preventDefault();
+        }
+    });
+    
+        </script>
 </body>
 </html>

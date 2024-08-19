@@ -144,6 +144,9 @@
                 <li><strong>Compromiso Social y Cultural:</strong> Valdelomar mostró un fuerte compromiso con las cuestiones sociales y culturales. A través de sus escritos, abordó temas como la identidad nacional, la modernización y la crítica social, reflejando su preocupación por el desarrollo cultural del Perú.</li>
                 <li><strong>Miembro Activo del Grupo Colónida:</strong> Como miembro destacado del Grupo Colónida, Valdelomar fue parte de un movimiento que buscaba revitalizar la literatura peruana. Su participación en este grupo subraya su papel en la vanguardia literaria y su influencia en el cambio cultural de su tiempo.</li>
                 <li><strong>Impacto en la Literatura Peruana:</strong> Su influencia en la literatura peruana es profunda y duradera. Valdelomar es recordado no solo por sus obras literarias, sino también por su papel como mentor y figura clave en el desarrollo de otros escritores contemporáneos.</li>
+                <li><strong>Obras Destacadas:</strong> Entre sus obras más conocidas se encuentran "El Caballero Carmelo", un cuento que refleja la vida rural peruana, y "La Ciudad de los Tísicos", una novela que aborda temas de enfermedad y decadencia.</li>
+                <li><strong>Vida Personal y Trágica:</strong> Nació en Pisco, Perú, y su vida estuvo marcada por tragedias personales, incluyendo la muerte de su padre. Estas experiencias influyeron profundamente en su obra. Murió joven, a los 31 años, en un accidente en Ayacucho.</li>
+                <li><strong>Legado Cultural:</strong> Valdelomar es considerado una figura clave en la literatura peruana y su legado perdura a través de sus escritos y su influencia en generaciones posteriores de escritores.</li>
             </ul>
         </div>
     </div>
@@ -152,8 +155,28 @@
         <a href="index.html">Inicio</a>
         <a href="vida.html">Vida</a>
         <a href="colonida.html">Grupo Colónida</a>
+        <a href="no debiste presionar.html">no presionar</a>
     </div>
 
     <div class="stars"></div>
+            <script>
+            document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+    
+    document.addEventListener('mousedown', function(e) {
+        if(e.button === 2) {
+            e.preventDefault();
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if(e.ctrlKey && (e.which === 67 || e.which === 86 || e.which === 85 || e.which === 117)) {
+            // Ctrl+C, Ctrl+V, Ctrl+U y Ctrl+Shift+I
+            e.preventDefault();
+        }
+    });
+    
+        </script>
 </body>
 </html>

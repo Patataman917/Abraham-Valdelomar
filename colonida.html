@@ -12,7 +12,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            overflow-y: scroll; /* Asegura que la barra de desplazamiento esté visible */
+            overflow-y: scroll;
         }
 
         h1 {
@@ -68,19 +68,19 @@
 
         .navigation-buttons a {
             display: inline-block;
-            background-color: #004d40; /* Color oscuro para los botones */
+            background-color: #004d40;
             color: #fff;
             padding: 15px 30px;
             border-radius: 30px;
             text-decoration: none;
             font-size: 1.2em;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            border: 2px solid #004d40; /* Borde oscuro */
+            border: 2px solid #004d40;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .navigation-buttons a:hover {
-            background-color: #00251a; /* Color más oscuro para el hover */
+            background-color: #00251a;
             border-color: #00251a;
             transform: scale(1.1);
         }
@@ -128,18 +128,46 @@
                 background-position: 100% 100%;
             }
         }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #004d40;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Posición de la burbuja */
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
     <h1>Grupo Colónida</h1>
     <div class="content-container">
         <div class="image-container">
-            <img src="descarga - 2024-08-18T202029.587.jpg">
+            <img src="imagen_grupo_colonida.jpg" alt="Imagen del Grupo Colónida">
         </div>
         <div class="text-container">
-            <p>El Grupo Colónida fue un destacado movimiento literario peruano que surgió a principios del siglo XX. Fundado en 1909 por Abraham Valdelomar y un grupo de jóvenes escritores, el grupo se caracterizó por su enfoque en la modernización de la literatura peruana y su compromiso con la renovación estética y temática.</p>
+            <p>El Grupo Colónida fue un destacado movimiento literario peruano que surgió a principios del siglo XX. Fundado en 1916 por <span class="tooltip">Abraham Valdelomar<span class="tooltiptext">Escritor y fundador del Grupo Colónida</span></span> y un grupo de jóvenes escritores, el grupo se caracterizó por su enfoque en la modernización de la literatura peruana y su compromiso con la renovación estética y temática.</p>
             <p>Los miembros del Grupo Colónida se inspiraron en corrientes literarias europeas y en la búsqueda de una identidad cultural peruana. El grupo promovió un estilo literario innovador, influenciado por el modernismo y el simbolismo, y se convirtió en una de las fuerzas más importantes en la escena literaria peruana de la época.</p>
-            <p>Además de Valdelomar, el grupo incluyó a escritores como Martín Adán, José María Eguren y otros. Su legado sigue siendo relevante en la literatura peruana, y sus obras continúan siendo estudiadas y apreciadas por su impacto en la cultura literaria del país.</p>
+            <p>Además de Valdelomar, el grupo incluyó a escritores como <span class="tooltip">Martín Adán<span class="tooltiptext">Poeta y novelista peruano</span></span>, <span class="tooltip">José María Eguren<span class="tooltiptext">Poeta simbolista peruano</span></span>, <span class="tooltip">Federico More<span class="tooltiptext">Ensayista y periodista peruano</span></span>, <span class="tooltip">Percy Gibson<span class="tooltiptext">Poeta y dramaturgo peruano</span></span>, y <span class="tooltip">Alberto Guillén<span class="tooltiptext">Poeta y crítico literario peruano</span></span>. Su legado sigue siendo relevante en la literatura peruana, y sus obras continúan siendo estudiadas y apreciadas por su impacto en la cultura literaria del país.</p>
         </div>
     </div>
 
@@ -150,5 +178,24 @@
     </div>
 
     <div class="stars"></div>
+            <script>
+            document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+    
+    document.addEventListener('mousedown', function(e) {
+        if(e.button === 2) {
+            e.preventDefault();
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if(e.ctrlKey && (e.which === 67 || e.which === 86 || e.which === 85 || e.which === 117)) {
+            // Ctrl+C, Ctrl+V, Ctrl+U y Ctrl+Shift+I
+            e.preventDefault();
+        }
+    });
+    
+        </script>
 </body>
 </html>
