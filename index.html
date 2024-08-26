@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abraham Valdelomar</title>
     <style>
+        /* Estilos generales */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            background: url('fondo.png') no-repeat center center fixed; /* Fondo de la página */
+            background-size: cover;
             color: #333;
             text-align: center;
             padding: 0;
             margin: 0;
-            overflow-y: scroll; /* Asegura que la barra de desplazamiento esté visible */
+            overflow-y: scroll;
             height: auto;
             display: flex;
             flex-direction: column;
@@ -40,17 +42,17 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap; /* No permitir el envolvimiento */
+            overflow-x: auto; /* Permitir desplazamiento horizontal si es necesario */
             margin: 50px auto;
             max-width: 1200px;
             padding: 0 20px;
-            flex: 1;
         }
 
         .card {
             width: 300px;
             height: 300px;
-            background: #ffffff;
+            background: #f5f5dc; /* Color beige para las tarjetas */
             border-radius: 15px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -67,30 +69,6 @@
             animation: pulse 3s infinite;
         }
 
-        .card-vida {
-            background-color: #B3E5FC; /* Azul celeste claro */
-            color: #333333; /* Gris oscuro */
-            border: 2px solid #81D4FA; /* Azul celeste más intenso */
-        }
-
-        .card-colonida {
-            background-color: #81D4FA; /* Azul celeste más intenso */
-            color: #FFFFFF; /* Blanco */
-            border: 2px solid #4FC3F7; /* Azul celeste brillante */
-        }
-
-        .card-caracteristicas {
-            background-color: #4FC3F7; /* Azul celeste brillante */
-            color: #FFFFFF; /* Blanco */
-            border: 2px solid #29B6F6; /* Azul celeste vibrante */
-        }
-
-        /* Estilo del resplandor en hover */
-        .card:hover {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.3);
-            transform: scale(1.05);
-        }
-
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -103,29 +81,6 @@
             100% {
                 transform: scale(1);
                 box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            }
-        }
-
-        /* Estilo del fondo de estrellas */
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-            background-size: 20px 20px;
-            animation: stars 10s linear infinite;
-        }
-
-        @keyframes stars {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 100% 100%;
             }
         }
 
@@ -155,6 +110,10 @@
             flex: 2;
             text-align: left;
             max-width: 800px;
+            background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente para el texto */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
         /* Estilos de animación */
@@ -182,43 +141,25 @@
 
         /* Estilos generales para botones de navegación */
         .navigation-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px auto;
-            flex-direction: column;
-        }
-
-        .navigation-buttons a {
-            display: inline-block;
-            background-color: #004d40; /* Color oscuro para los botones */
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            border: 2px solid #004d40; /* Borde oscuro */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .navigation-buttons a:hover {
-            background-color: #00251a; /* Color más oscuro para el hover */
-            border-color: #00251a;
-            transform: scale(1.1);
+            display: none; /* Ocultar botones de navegación que se eliminarán */
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
     <h1>Abraham Valdelomar</h1>
     <div class="content-container">
         <div class="image-container">
             <img src="descarga - 2024-08-18T202029.587.jpg" alt="Abraham Valdelomar">
         </div>
         <div class="text-container">
-            <p>Abraham Valdelomar fue un escritor, poeta y cuentista peruano, un miembro influyente del Grupo Colónida, el cual promovió un nuevo movimiento literario en Perú a inicios del siglo XX. Sus obras son ampliamente conocidas por la representación vívida de la vida y las costumbres peruanas. Además de ser escritor, Valdelomar incursionó en el periodismo, el arte y la política.</p>
-            <p>Valdelomar se destacó no solo por su obra literaria, sino también por su personalidad carismática y su habilidad para conectar con la gente. A menudo utilizaba sus experiencias personales como inspiración para sus historias, creando historias que resonaban profundamente con el público peruano. Entre sus obras más destacadas se encuentran "El caballero Carmelo" y "La ciudad muerta", las cuales reflejan su amor por las tradiciones y paisajes del Perú.</p>
+            <p>Abraham Valdelomar , nacido el 27 de abril de 1888 en Ica, Perú, fue un destacado escritor y figura clave en la literatura peruana contemporánea. A lo largo de su vida, se desempeñó como narrador, poeta, periodista, dibujante, ensallista, dramaturgo y batman por las noches.</p>
+            <h2>Biografía de Abraham Valdelomar</h2>
+            <p><strong>Infancia y Educación:</strong> Nacido en Ica, Valdelomar se trasladó con su familia al puerto de Pisco durante su infancia. Allí cursó parte de su educación primaria y luego completó su educación secundaria en Lima. Ingresó a la Facultad de Letras de la Universidad Nacional Mayor de San Marcos.</p>
+            <p><strong>Periodismo y Política:</strong> Interrumpió sus estudios para incursionar en el periodismo y la política. Fue nombrado director del diario oficial “El Peruano” y representó a Perú en Italia como secretario de la legación peruana.</p>
+            <p><strong>Modernidad Literaria:</strong> Fundó la revista literaria “Colónida” en 1916. Publicó su libro de cuentos “El caballero Carmelo” en 1918, marcando el inicio de la modernidad en la narrativa peruana. Este relato nostálgico ambientado en Pisco evoca una pelea de gallos y refleja la tradición y la lucha contra el cambio.</p>
+            <p><strong>Obras Destacadas:</strong> Además de “El caballero Carmelo”, Valdelomar publicó el libro de cuentos “Los hijos del Sol”.Marcaron el punto de partida de la narrativa moderna en el Perú.</p>
+            <p><strong>Muerte Prematura:</strong> A los 31 años, mientras estaba en Ayacucho, sufrió una caída accidental que le provocó la fractura de la columna vertebral. Su partida dejó un vacío en la literatura peruana.</p>
+            <p>Valdelomar fue un escritor completo, abarcando prácticamente todos los géneros literarios conocidos. Su legado hace gran presencia en sus cuentos, poesías y ensayos, y su influencia sigue inspirando a las generaciones posteriores. Su breve pero intensa vida nos recuerda la importancia de valorar y celebrar la creatividad y la pasión literaria.</p>
         </div>
     </div>
 
@@ -226,41 +167,47 @@
     <div class="cards-container">
         <a href="vida.html" class="card card-vida">
             <h3>Vida</h3>
-            <p>Explora la vida de Abraham Valdelomar, sus inicios y su influencia en la literatura peruana.</p>
+            <p>Describo un poco la vida de abraham valdelomar y de como vivia su vida.</p>
         </a>
         <a href="colonida.html" class="card card-colonida">
             <h3>Colónida</h3>
-            <p>Conoce más sobre el Grupo Colónida y su impacto en la literatura y cultura peruana.</p>
+            <p>Informacion sobre el grupo colonida y cosas creo.</p>
         </a>
         <a href="caracteristicas.html" class="card card-caracteristicas">
             <h3>Características</h3>
-            <p>Descubre las características literarias y personales que definieron a Abraham Valdelomar.</p>
+            <p>Características mas resaltantes de abraham valdelomar</p>
         </a>
     </div>
 
-
-    <div class="stars"></div>
-
-    <div class="interactive-elements">
-    </div>
-            <script>
-            document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    });
-    
-    document.addEventListener('mousedown', function(e) {
-        if(e.button === 2) {
+    <!-- Scripts de animación o funcionalidades adicionales -->
+    <script>
+        // Ejemplo de script para animar las tarjetas al hacer hover
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'scale(1.1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+        <script>
+        document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
-        }
-    });
-    
-    document.addEventListener('keydown', function(e) {
-        if(e.ctrlKey && (e.which === 67 || e.which === 86 || e.which === 85 || e.which === 117)) {
-            // Ctrl+C, Ctrl+V, Ctrl+U y Ctrl+Shift+I
-            e.preventDefault();
-        }
-    });
-    
-        </script>
+        });
+
+        document.addEventListener('mousedown', function(e) {
+            if(e.button === 2) {
+                e.preventDefault();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if(e.ctrlKey && (e.which === 67 || e.which === 86 || e.which === 85 || e.which === 117)) {
+                // Ctrl+C, Ctrl+V, Ctrl+U y Ctrl+Shift+I
+                e.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>
